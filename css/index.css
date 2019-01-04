@@ -1,0 +1,743 @@
+﻿html {
+    /* 375PX设计稿：1REM=100PX */
+    font-size: 100px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.mainBox {
+    position: relative;
+    margin: 0 auto;
+    max-width: 750px;
+    height: 100%;
+}
+
+/* 提示按钮 */
+.mainBox .previousTip {
+    position: absolute;
+    bottom: .25rem;
+    left: 50%;
+    margin-left: -.125rem;
+    width: .25rem;
+    height: .2rem;
+    z-index: 9999;
+    background: url('http://pkffc4n99.bkt.clouddn.com/image/arrow.png') no-repeat;
+    background-size: 100% 100%;
+    animation: previousTipMove 1.2s infinite both;
+}
+
+@keyframes previousTipMove {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-.25rem);
+    }
+}
+
+/* 音乐按钮 */
+.mainBox .musicBox {
+    position: absolute;
+    top: .15rem;
+    right: .15rem;
+    z-index: 9999;
+    width: .3rem;
+    height: .3rem;
+    background: url('http://pkffc4n99.bkt.clouddn.com/image/music.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.mainBox .musicBox.move {
+    animation: musicMove 1s linear infinite both;
+}
+
+@keyframes musicMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* SWIPER基础 */
+.swiper-container,
+.swiper-slide {
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+/* ==PAGE1== */
+.page1 {
+    position: relative;
+    background: url('../image/7.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 文章中英文 */
+.page1 .text {
+    position: absolute;
+    top: 0.54rem;
+    left: 1.3rem;
+    line-height: 0.4rem;
+}
+
+.page1 .text p {
+    color: #000;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.page1 .text #Chi {
+    font-family: "楷体";
+}
+
+/* 引自书 */
+.page1 .textOne {
+    position: absolute;
+    top: 1.6rem;
+    left: 50%;
+    line-height: 0.4rem;
+    text-indent: 1em;
+    width: 2.7rem;
+    margin-left: -1.35rem;
+}
+
+.page1 .textOne p {
+    font-size: 16px;
+}
+
+.page1 .textOne #textOneAuthor {
+    position: absolute;
+    right: 0.3rem;
+}
+
+/* 第一页图片 */
+.page1 .imgBoxFir {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    bottom: .6rem;
+
+
+}
+
+.page1 .imgBoxFir img {
+    position: absolute;
+}
+
+.page1 .imgBoxFir img:nth-child(1) {
+    top: .9rem;
+    height: 1.8rem;
+    left: 0.1rem;
+    width: 1rem;
+    z-index: 2;
+}
+
+.page1 .imgBoxFir img:nth-child(2) {
+
+    top: .8rem;
+    right: 0rem;
+    width: 1rem;
+    height: 1.8rem;
+    z-index: 2;
+}
+
+.page1 .imgBoxFir img:nth-child(3) {
+    top: 0;
+    left: 50%;
+    margin-left: -1.01rem;
+    z-index: 1;
+}
+
+.page1 .imgBoxFir img:nth-child(4) {
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.36rem;
+    z-index: 2;
+}
+
+/* ==PAGE2== */
+.page2 {
+    background: url('../image/huawen_4.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.page2 .photo>img {
+    position: absolute;
+}
+
+.page2 .photo>img:nth-of-type(1) {
+
+    left: 0.3rem;
+    top: 0.3rem;
+    width: 2.2rem;
+}
+
+.page2 .photo>img:nth-of-type(2) {
+
+    right: 0.2rem;
+    top: 1.7rem;
+    width: 2.5rem;
+}
+
+.page2 .photo>img:nth-of-type(3) {
+
+    left: 0.2rem;
+    top: 4rem;
+    width: 2.3rem;
+    height: 2.4rem;
+}
+
+/* 第二页文字 */
+.page2 .text {
+    position: absolute;
+    line-height: 0.3rem;
+    right: 0.2rem;
+    width: 1.4rem;
+    top: 0.5rem;
+}
+
+.page2 .text p,
+.textOne p,
+.textTwo p {
+    font-size: 15px;
+}
+
+.page2 .textOne {
+    position: absolute;
+    left: 0.35rem;
+    line-height: 0.3rem;
+    width: 1rem;
+    top: 1.95rem;
+}
+
+.page2 .textTwo {
+    position: absolute;
+    right: 0.2rem;
+    width: 1.2rem;
+    bottom: 1rem;
+    line-height: 0.3rem;
+}
+
+
+
+/* 在某些特定宽高的手机中，可能发生元素重叠，此时我们基于@media进行微调整 */
+@media all and (width:414px) {
+    .page1 .text {
+        top: 0.43rem;
+        left: 1.2rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(2) {
+        right: 0.2rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(1) {
+        left: 0.3rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(3) {
+        margin-left: -.81rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(4) {
+        margin-left: -1.16rem;
+    }
+
+    .page2 .photo>img:nth-of-type(1) {
+
+        left: 0.3rem;
+        top: 0.4rem;
+        width: 1.8rem;
+    }
+
+    .page2 .photo>img:nth-of-type(2) {
+
+        right: 0.2rem;
+        top: 1.7rem;
+        width: 2.3rem;
+    }
+
+    .page2 .photo>img:nth-of-type(3) {
+
+        left: 0.2rem;
+        top: 4rem;
+        width: 2.1rem;
+        height: 2.2rem;
+    }
+
+    .page2 .textTwo {
+        position: absolute;
+        right: 0.2rem;
+        width: 1.2rem;
+        bottom: .4rem;
+        line-height: 0.3rem;
+    }
+
+}
+
+@media all and (max-width:375px) {
+    .page1 .text {
+        top: 0.43rem;
+        left: 1.1rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(2) {
+        right: 0.2rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(1) {
+        left: 0.2rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(3) {
+        margin-left: -1.01rem;
+    }
+
+    .page1 .imgBoxFir img:nth-child(4) {
+        margin-left: -1.36rem;
+    }
+
+    .page2 .photo>img:nth-of-type(1) {
+
+        left: 0.3rem;
+        top: 0.4rem;
+        width: 1.8rem;
+    }
+
+    .page2 .photo>img:nth-of-type(2) {
+
+        right: 0.2rem;
+        top: 1.7rem;
+        width: 2.3rem;
+    }
+
+    .page2 .photo>img:nth-of-type(3) {
+
+        left: 0.2rem;
+        top: 4rem;
+        width: 2.1rem;
+        height: 2.2rem;
+    }
+
+    .page2 .textTwo {
+        right: 0.2rem;
+        width: 1.2rem;
+        top: 4rem;
+        line-height: 0.3rem;
+    }
+
+}
+
+
+/* 为了防止特定手机设备中元素发生重叠，我们样式布局的时候可以都使用百分比处理（不推荐：写样式算百分比太麻烦） */
+.page3 {
+    background: url('../image/huawen.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.page3 .photo ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.page3 .photo ul li>img,
+.page3 .photo ul li>p {
+    position: absolute;
+    font-size: 15px;
+}
+
+.page3 .photo ul .one {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1.65rem;
+    width: 3.3rem;
+    height: 4rem;
+    overflow: hidden;
+}
+
+.page3 .photo ul .one>img:nth-of-type(1),
+.page3 .photo ul .one>img:nth-of-type(2),
+.page3 .photo ul .one>img:nth-of-type(3),
+.page3 .photo ul .one>img:nth-of-type(4) {
+    top: 0.2rem;
+    width: 100%;
+    height: 2rem;
+}
+
+.page3 .photo ul .one>img:nth-of-type(1) {
+    z-index: 6;
+}
+
+.page3 .photo ul .one>img:nth-of-type(2) {
+    z-index: 3;
+}
+
+.page3 .photo ul .one>img:nth-of-type(3) {
+    z-index: 4;
+}
+
+.page3 .photo ul .one>img:nth-of-type(4) {
+    z-index: 5;
+}
+
+.page3 .photo ul .one p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 18px;
+    text-indent: 2em;
+    line-height: .3rem;
+}
+
+.page3 .photo ul .three p {
+    left: 50%;
+    margin-left: -1.65rem;
+    width: 3.3rem;
+    font-size: 18px;
+    bottom: -.35rem;
+    color: #000;
+}
+
+
+.page3 .photo ul .three {
+    position: absolute;
+    top: 3.9rem;
+    left: 50%;
+    margin-left: -1.65rem;
+    width: 3.3rem;
+    height: 2.2rem;
+}
+
+.page3 .photo ul .three img {
+    top: 0.2rem;
+    left: 50%;
+    margin-left: -1.65rem;
+    width: 100%;
+    height: 2rem;
+}
+
+
+/* ==PAGE4== */
+.page4 {
+    position: relative;
+    background: url('../image/huawen_3.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.page4 ul,
+.page5 ul,
+.page6 ul {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.page4 ul .one {
+    position: absolute;
+    top: .4rem;
+    left: 50%;
+    margin-left: -1.75rem;
+    width: 3.5rem;
+    height: 2.6rem;
+}
+
+.page4 ul .one img {
+    position: absolute;
+    top: 0;
+    left: 0.2rem;
+    width: 3rem;
+    height: 2.5rem;
+}
+
+.page4 ul .three {
+    position: absolute;
+    bottom: .4rem;
+    left: 50%;
+    margin-left: -1.75rem;
+    width: 3.5rem;
+    height: 2.6rem;
+}
+
+.page4 ul .three img {
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    width: 3.2rem;
+    height: 2.4rem;
+}
+
+.page4 ul .two {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    margin-left: -1.5rem;
+    margin-top: -1rem;
+    width: 3rem;
+    height: 2.65rem;
+    font-size: 15px;
+    text-indent: 2em;
+    line-height: .3rem;
+}
+
+/* ==PAGE5== */
+.page5 {
+    position: relative;
+    background: url('../image/beijing1.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.page5 ul li,
+.page5 ul li img,
+.page6 ul li,
+.page6 ul li img {
+    position: absolute;
+}
+
+.page5 ul .one {
+    top: .2rem;
+    left: 50%;
+    margin-left: -1.7rem;
+    width: 3.4rem;
+    height: 2rem;
+}
+
+.page5 ul .one>img {
+    width: 100%;
+    height: 100%;
+}
+
+.page5 ul .two {
+    top: 2.3rem;
+    left: 50%;
+    margin-left: -1.7rem;
+    width: 3.4rem;
+    height: 2rem;
+}
+
+.page5 ul .two>img {
+    top: 0;
+    left: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.page5 ul .two span,
+.three span {
+    position: absolute;
+    text-indent: 2em;
+    top: 0.2rem;
+    right: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    font-size: .16rem;
+    line-height: .25rem;
+}
+
+.page5 ul .three {
+    top: 4.1rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    width: 3rem;
+    height: 2.4rem;
+}
+
+.page5 ul .three span {
+    text-indent: 0em;
+    display: block;
+    top: 0.1rem;
+    width: 100%;
+
+}
+
+.page5 ul .three>img {
+    top: 1rem;
+    width: 100%;
+    height: 70%;
+}
+
+/* ==PAGE6== */
+.page6 {
+    position: relative;
+    background: url('../image/beijing2.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.page6 ul .one {
+    top: .2rem;
+    left: 50%;
+    margin-left: -1.7rem;
+    width: 3.4rem;
+    height: 2.4rem;
+}
+
+.page6 ul .one>img {
+    top: 0;
+    width: 100%;
+    height: 80%;
+}
+
+.page6 ul .one span {
+    position: absolute;
+    text-indent: 2em;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.6rem;
+    width: 3.2rem;
+    height: .4rem;
+    font-size: 15px;
+    color:white;
+    
+}
+
+.page6 ul .two {
+    top: 3rem;
+    left: 50%;
+    margin-left: -1.7rem;
+    width: 3.4rem;
+    height: 3.8rem;
+}
+
+.page6 ul .two>img {
+    bottom: 0.2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.page6 ul .three {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.page6 ul .three>img {
+    width: 100%;
+    height: 100%;
+}
+
+.page6 ul .three .text {
+    position: absolute;
+    left: 50%;
+    margin-left: -1rem;
+    top: 40%;
+    width: 4rem;
+    height: 4rem;
+}
+
+.page6 ul .three .text p {
+    line-height: .3rem;
+    font-size: 18px;
+    color: white;
+    position: relative;
+    width: 3rem;
+}
+
+.page6 ul .three .text p:nth-of-type(1) {
+    font-size: 25px;
+}
+
+/* ==PAGE7== */
+.page7 {
+    position: relative;
+    background: url('../image/huawen_6.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.page7 .photo {
+    position: absolute;
+    top: .2rem;
+    left: 50%;
+    margin-left: -1.65rem;
+    width: 3.3rem;
+    height: 5rem;
+}
+
+.page7 .photo>img {
+    position: absolute;
+}
+
+.page7 .photo>img:nth-of-type(1) {
+    top: 1.8rem;
+    right: 0rem;
+    width: 1.5rem;
+    height: 1rem;
+}
+
+.page7 .photo>img:nth-of-type(2) {
+    top: 2.9rem;
+    right: 0rem;
+    width: 1.8rem;
+    height: 1.2rem;
+}
+
+.page7 .photo>img:nth-of-type(3) {
+    top: 0.1rem;
+    left: 0rem;
+    width: 2.1rem;
+    height: 1.3rem;
+}
+
+.page7 .photo>img:nth-of-type(4) {
+    top: 1.6rem;
+    left: 0rem;
+    width: 1.72rem;
+    height: 1.2rem;
+}
+
+.page7 .photo>img:nth-of-type(5) {
+    top: .1rem;
+    right: 0rem;
+    width: 1.1rem;
+    height: 1.5rem;
+}
+
+.page7 .photo .text {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.1rem;
+    left: 0;
+    top: 3rem;
+    color: rgb(31, 28, 26);
+    font-size: 20px;
+    line-height: .35rem;
+    text-indent: 2em;
+}
+
+.page7 .vd {
+    position: absolute;
+    top: 4.5rem;
+    left: 50%;
+    margin-left: -1.6rem;
+    width: 3.2rem;
+    height: 2rem;
+}
+
+.page7 .vd img {
+    width: 100%;
+    height: 100%;
+}
+
+.page7 .vd video {
+    position: absolute;
+    top: -.1rem;
+    left: 50%;
+    margin-left: -42.5%;
+    width: 85%;
+    height: 2rem;
+}
